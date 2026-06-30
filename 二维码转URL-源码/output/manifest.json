@@ -1,0 +1,70 @@
+{
+  "name": {
+    "zh-CN": "二维码转URL"
+  },
+  "i18nMap": {
+    "zh-CN": {
+      "qrImageLabel": "二维码来源",
+      "noAttachment": "请先上传二维码图片",
+      "missingUrl": "二维码图片缺少可读取的附件链接",
+      "decodeFailed": "未识别到二维码，请上传清晰、完整的二维码图片",
+      "processFailed": "二维码解析失败，请稍后重试或更换图片"
+    },
+    "en-US": {
+      "qrImageLabel": "QR Code Source",
+      "noAttachment": "Please upload a QR code image first",
+      "missingUrl": "The QR image does not include a readable attachment URL",
+      "decodeFailed": "No QR code was detected. Please upload a clear and complete QR image",
+      "processFailed": "Failed to decode the QR code. Please retry later or use another image"
+    },
+    "ja-JP": {
+      "qrImageLabel": "QRコードソース",
+      "noAttachment": "QRコード画像をアップロードしてください",
+      "missingUrl": "QR画像に読み取り可能な添付リンクがありません",
+      "decodeFailed": "QRコードを検出できません。鮮明で完全なQR画像をアップロードしてください",
+      "processFailed": "QRコードの解析に失敗しました。後でもう一度試すか、別の画像を使用してください"
+    }
+  },
+  "isDebug": true,
+  "fields": [
+    {
+      "fieldType": "text",
+      "uiSchema": {
+        "fieldMetaEditor": {
+          "component": "FieldMetaEditor",
+          "props": {
+            "schema": {
+              "items": [
+                {
+                  "key": "qrImage",
+                  "label": "${{qrImageLabel}}",
+                  "component": "FieldSelect",
+                  "props": {
+                    "mode": "single",
+                    "supportTypes": [
+                      "file"
+                    ]
+                  },
+                  "validator": {
+                    "required": true
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      "presetFieldConfig": {
+        "externalEditorConfig": {},
+        "fieldProperty": {}
+      },
+      "executeErrorMessages": {
+        "no_attachment": "${{noAttachment}}",
+        "missing_url": "${{missingUrl}}",
+        "decode_failed": "${{decodeFailed}}",
+        "process_failed": "${{processFailed}}"
+      }
+    }
+  ],
+  "extensionSubType": "faas"
+}
